@@ -6,7 +6,7 @@ import json
 from pandas import *
 
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template,request
 from threading import Thread
 
 
@@ -26,18 +26,20 @@ def home():
 
 @app.route("/getstarted")
 def getstarted():
+    if request.args.get("amount"):
+            
+        amount = int(request.args.get("amount"))
+        if amount<25000:
+            cap="small-cap"
+        elif amount<100000:
+            cap="mid-cap"
+        else:
+            cap="large-cap"
+        data=xl2dict(cap)
+        cap = cap.title().replace("-"," ")
+        return render_template("results.html",len=len(data["Company Name"]),data=data,cap=cap)
     return render_template("getstarted.html")
 
-@app.route("/getstarted?amount=<amount>")
-def calucate(amount:int):
-    if amount<25000:
-        data=xl2dict("small-cap")
-    elif amount<100000:
-        data=xl2dict("mid-cap")
-    else:
-        data=xl2dict("large-cap")
-        
-    return render_template("results.html")
 
 
 @app.route("/disclaimer")
