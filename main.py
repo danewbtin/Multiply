@@ -1,3 +1,4 @@
+from cgitb import small
 import re
 import os
 import requests
@@ -11,8 +12,8 @@ from threading import Thread
 
 app = Flask("Multipy")
 
-def xl2dict()->dict:
-    xls = ExcelFile("data/small-cap.xlsx")
+def xl2dict(file:str)->dict:
+    xls = ExcelFile(f"data/{file}.xlsx")
     df = xls.parse(xls.sheet_names[0])
     # with open("xt.txt","w") as f:
     #     f.write(json.dumps(df.to_dict(),indent=4))
@@ -25,6 +26,17 @@ def home():
 
 @app.route("/getstarted")
 def getstarted():
+    return render_template("getstarted.html")
+
+@app.route("/getstarted?amount=<amount>")
+def calucate(amount:int):
+    if amount<25000:
+        data=xl2dict("small-cap")
+    elif amount<100000:
+        data=xl2dict("mid-cap")
+    else
+        data=xl2dict("large-cap")
+        
     return render_template("getstarted.html")
 
 
