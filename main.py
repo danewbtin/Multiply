@@ -34,10 +34,10 @@ def calucate(amount:int):
         data=xl2dict("small-cap")
     elif amount<100000:
         data=xl2dict("mid-cap")
-    else
+    else:
         data=xl2dict("large-cap")
         
-    return render_template("getstarted.html")
+    return render_template("results.html")
 
 
 @app.route("/disclaimer")
