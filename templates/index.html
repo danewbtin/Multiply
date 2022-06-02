@@ -16,7 +16,7 @@
 <body>
     <div class="bging">
         <nav class="navbar navbar-expand-md navbar-light">
-            <a class="navbar-brand font-weight-bold mx-auto" href="index.html">Multiply</a>
+            <a class="navbar-brand font-weight-bold mx-auto" href="{{url_for('home')}}">Multiply</a>
             <button class="navbar-toggler" type="button" data-toggle="Collapse" data-target="#collapsiblenavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,19 +29,19 @@
                         <a class="nav-link" href="#">Sign Up</a>
                     </li>
                     <li class="navbar-item2">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
+                        <a class="nav-link" href="{{url_for('aboutus')}}">About Us</a>
                     </li>
                     <li class="navbar-item3">
-                        <a class="nav-link" href="toc.html">Terms & Conditions</a>
+                        <a class="nav-link" href="{{url_for('toc')}}">Terms & Conditions</a>
                     </li>
                     <li class="navbar-item4">
-                        <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+                        <a class="nav-link" href="{{url_for('disclaimer')}}">Disclaimer</a>
                     </li>
                     <li class="navbar-item5">
-                        <a class="nav-link" href="faqs.html">FAQs</a>
+                        <a class="nav-link" href="{{url_for('faqs')}}">FAQs</a>
                     </li>
                     <li class="navbar-item6">
-                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                        <a class="nav-link" href="{{url_for('contactus')}}">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                 <h1>Multiply</h1>
                 <h6>Change the Way you Live</h6>
                 <div class="button1">
-                    <a href="getstarted">
+                    <a href="{{url_for('getstarted')}}">
                         <button type="button" class="btn btn-md btn-primary" enabled>Get Started</button>
                     </a>
                 </div>

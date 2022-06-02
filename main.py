@@ -37,6 +37,7 @@ def getstarted():
             cap="large-cap"
         data=xl2dict(cap)
         cap = cap.title().replace("-"," ")
+        
         return render_template("results.html",len=len(data["Company Name"]),data=data,cap=cap)
     return render_template("getstarted.html")
 
@@ -53,9 +54,20 @@ def toc():
     return render_template("toc.html")
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+
+@app.route("/contactus")
+def contactus():
+    return render_template("contactus.html")
+
+
+@app.route("/faqs")
+def faqs():
+    return render_template("faqs.html")
+
+
+@app.route("/aboutus")
+def aboutus():
+    return render_template("aboutus.html")
 
 
 if __name__ == "__main__":
