@@ -189,7 +189,7 @@ hr {
     margin-top: 358px;
 }
 
-h1 {
+.table-title {
     font-size: 30px;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
@@ -202,15 +202,21 @@ table {
     width: 100%;
     table-layout: fixed;
 }
-
 .tbl-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     background-color: rgba(25, 229, 161, 0.3);
+}
+thead{
+    border-radius: 0px;
 }
 
 .tbl-content {
-    height: 300px;
+    height: 450px;
     overflow-x: auto;
     margin-top: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     border: 2px solid rgba(126, 135, 125, 0.623);
 }
 
