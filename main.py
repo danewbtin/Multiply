@@ -26,7 +26,7 @@ def disclaimer():
     return render_template("disclaimer.html")
 
 @app.route("/toc")
-def toc():
+def toc():  
     return render_template("toc.html")
 
 @app.route("/about")
